@@ -1,0 +1,45 @@
+*{
+    font-family: 'Roboto', sans-serif;;
+}
+body{
+    background-color: black;
+}
+
+form{
+    position: absolute;
+    top: 20%;
+    left:55%;
+    transform: translateX(-50%);
+    
+}
+
+input{
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+input:focus{
+    background-color: black;
+    color:royalblue;
+}
+
+
+input#id_x, input#id_y{
+    margin-right: 10vw;
+}
+
+input:last-child{
+    margin-top: 30px;
+    transition:0.2s;
+    border:none;
+}
+
+input:last-child:hover{
+    background-color: black;
+    color:royalblue;
+}
+
+label{
+    color:royalblue;
+    font-size: 25px;
+}
