@@ -9,12 +9,15 @@
 </head>
 <body>
 
-<form action="<?php print(_APP_URL);?>/app/security/login.php" method="post">
-	<label for="id_x">Login</label><br>
-	<input id="id_x" type="text" name="login" value="<?php out($form['login']) ?>"/><br/>
-	<label for="id_y">Password </label><br>
-	<input id="id_y" type="text" name="password"/><br/>
-	<input type="submit" value="Login"/>
+<form action="<?php print(_APP_URL);?>/app/security/login.php" method="post" class="pure-form pure-form-stacked">
+	<legend>Logowanie</legend>
+	<fieldset>
+		<label for="id_x">Login</label><br>
+		<input id="id_x" type="text" name="login" value="<?php out($form['login']) ?>"/><br/>
+		<label for="id_y">Password</label><br>
+		<input id="id_y" type="text" name="password"/><br/>
+	</fieldset>
+	<input type="submit" value="Login" class="pure-button pure-button-primary"/>
 </form>
 
 

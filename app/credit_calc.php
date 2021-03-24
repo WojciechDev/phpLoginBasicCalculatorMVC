@@ -11,26 +11,25 @@ $oprocentowanie = isset($_REQUEST['oprocentowanie']) ?  $_REQUEST['oprocentowani
 
 
 function validate(&$kwota, &$lata,&$oprocentowanie, &$messages){
-if ( ! (isset($kwota) && isset($lata) && isset($oprocentowanie))) {
-	
+	if ( ! (isset($kwota) && isset($lata) && isset($oprocentowanie))) {
 	return false;
-}
+	}
 
 
-if ( $kwota == "") {
-	$messages [] = 'Nie podano kwoty pozyczki';
-}
-if ( $lata == "") {
-	$messages [] = 'Nie podano czasu na jaki została wzięta pozyczka';
-}
-if($oprocentowanie == ""){
-	$messages[] = "Nie podano oprocentowania";
-}
+	if ( $kwota == "") {
+		$messages [] = 'Nie podano kwoty pozyczki';
+	}
+	if ( $lata == "") {
+		$messages [] = 'Nie podano czasu na jaki została wzięta pozyczka';
+	}
+	if($oprocentowanie == ""){
+		$messages[] = "Nie podano oprocentowania";
+	}
 
-//nie ma sensu walidować dalej gdy brak parametrów
-if (empty($messages)) {
+	//nie ma sensu walidować dalej gdy brak parametrów
+	if (count($messages) != 0) return false;
 	
-	// sprawdzenie, czy $x i $y są liczbami całkowitymi
+		// sprawdzenie, czy $x i $y są liczbami całkowitymi
 	if (! is_numeric($kwota)) {
 		$messages [] = 'Kwota pozyczki nie jest liczbą całkowitą';
 	}
@@ -40,9 +39,12 @@ if (empty($messages)) {
 	}
 	if(! is_numeric($oprocentowanie)){
 		$messages[] = 'Oprocentowanie nie jest wartością całkowitą'; 
-	}	
+	}
+	
+	if (count ( $messages ) != 0) return false;
+	else return true;
 
-}
+
 }
 
 
